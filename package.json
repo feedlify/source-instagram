@@ -1,12 +1,13 @@
 {
   "name": "@feedlify/source-instagram",
   "version": "0.0.0",
-  "description": "Retrieves Instagram public data",
+  "description": "Retrieves Instagram public data for @feedlify",
   "main": "lib/index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src --out-dir lib",
     "start": "./node_modules/.bin/babel --watch src --out-dir lib",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest",
+    "release": "npm run build && npm run test && npm publish --access=public"
   },
   "repository": {
     "type": "git",

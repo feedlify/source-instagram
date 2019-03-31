@@ -13,6 +13,7 @@ export const mediaDataType = (item) => {
     return {
         type: 'instagram::media',
         author: `instagram::${item.node.owner.username}`,
+        origin: `instagram::${item.node.owner.username}`,
         ctime: new Date(item.node.taken_at_timestamp * 1000),
         title: `Media by @${item.node.owner.username}`,
         text,

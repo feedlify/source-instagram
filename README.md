@@ -11,11 +11,11 @@ You can use `sourceInstagram` to scrape multiple profiles at the same time:
 
     const items = await sourceInstagram([
         {
-            source: 'marcopeg',
+            source: 'mpeg',
             limit: 20,
             exclude: [{
-                rule: 'username',
-                value: [ 'username1', 'username2', '...' ],
+                rule: 'tag',
+                value: [ 'tag1', 'tag2', '...' ],
             }]
         },
         {
@@ -29,25 +29,23 @@ The resulting dataset is organized as follow:
     {
         timeline: [
             {
-                type: 'twitter::tweet',
-                origin: 'twitter::GettyImages',
-                author: 'twitter::GettyImages',
-                ctime: new Date(2019-03-27T20:57:40.000Z),
-                title: 'Tweet by @GettyImages',
-                text: 'Thanks @shondarhimes. We\'re proud of being a part of this powerful initiative.',
-                url: 'https://twitter.com/shondarhimes/status/1110912567487029249',
-                preview: null,
-                hashtags: [],
-                __meta: [Object]
+                type: 'instagram::media',
+                origin: 'instagram::mpeg',
+                author: 'instagram::mpeg',
+                ctime: 2017-05-19T09:38:37.000Z,
+                title: 'Media by @mpeg',
+                text: '#bbq #weber #ribs',
+                url: 'https://www.instagram.com/p/BUROlKpAjSX/',
+                preview: 'https://scontent-arn2-1.cdninstagram.com/vp/bf5bb1f21554be4a7d2a57b43fde2a27/5D41CF3F/t51.2885-15/e35/c0.0.611.611/18512375_1923014867981898_3206383443709526016_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com',
+                hashtags: [ 'bbq', 'weber', 'ribs' ],
             }
         ],
         profiles: {
-            'twitter::GettyImages': {
-                id: 'twitter::GettyImages',
-                username: 'GettyImages',
-                pic: 'https://pbs.twimg.com/profile_images/1016315371484114944/hxz9PNy6_400x400.jpg',
-                url: 'https://twitter.com/GettyImages',
-                __meta: []
+            'instagram::mpeg': {
+                id: 'instagram::mpeg',
+                username: 'mpeg',
+                pic: 'https://scontent-arn2-1.cdninstagram.com/vp/ff4ebcf53e0a3dca7b4b4ec0d0082bde/5D4611BF/t51.2885-19/11311132_958407607554863_1903430048_a.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com',
+                url: 'https://instagram.com/mpeg',
             }
         }
     }
