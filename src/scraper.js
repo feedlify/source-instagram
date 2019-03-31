@@ -4,6 +4,7 @@
 
 const fetch = require('isomorphic-fetch')
 import { mediaDataType } from './data-type-media'
+import { profileDataType } from './data-type-profile'
 
 export const fetchProfile = async (username) => {
     const res = await fetch(`https://instagram.com/${username}`)
@@ -16,7 +17,8 @@ export const extractProfileData = (html) => {
 }
 
 export const extractTimeline = (profileData) => {
-    return profileData.edge_owner_to_timeline_media.edges.map(mediaDataType)
+    return profileData.edge_owner_to_timeline_media.edges
+        .map(mediaDataType)
 }
 
 export const scrapeProfile = async (username) => {
@@ -28,12 +30,6 @@ export const scrapeProfile = async (username) => {
     
     return {
         timeline,
-        profile: {
-            id: `instagram::${profileData.username}`,
-            username: profileData.username,
-            pic: profileData.profile_pic_url,
-            url: `https://instagram.com/${profileData.username}`,
-            __meta: profileData,
-        },
+        profile: profileDataType(profileData),
     }
 }

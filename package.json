@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "async": "^2.6.2",
+    "hashtag-regex": "^2.0.0",
     "isomorphic-fetch": "^2.2.1"
   }
 }

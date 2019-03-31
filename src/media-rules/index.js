@@ -1,7 +1,7 @@
-import { ruleUsername } from './rule-username'
+import { ruleTag } from './rule-tag'
 
 const rulesMap = {
-    username: ruleUsername,
+    tag: ruleTag,
 }
 
 const getRuleFn = (rule) =>

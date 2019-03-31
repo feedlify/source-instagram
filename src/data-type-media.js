@@ -1,3 +1,4 @@
+import { getHashtags } from './get-hashtags'
 
 const getMediaCaption = (item) => {
     try {
@@ -8,15 +9,16 @@ const getMediaCaption = (item) => {
 }
 
 export const mediaDataType = (item) => {
+    const text = getMediaCaption(item)
     return {
         type: 'instagram::media',
         author: `instagram::${item.node.owner.username}`,
         ctime: new Date(item.node.taken_at_timestamp * 1000),
         title: `Media by @${item.node.owner.username}`,
-        text: getMediaCaption(item),
+        text,
         url: `https://www.instagram.com/p/${item.node.shortcode}/`,
         preview: item.node.thumbnail_src,
-        hashtags: [],
+        hashtags: getHashtags(text),
         __meta: item.node,
     }
 }

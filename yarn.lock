@@ -1920,6 +1920,11 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hashtag-regex@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/hashtag-regex/-/hashtag-regex-2.0.0.tgz#9b32413529e9ca28b41e7c6378e35677b178d5ad"
+  integrity sha512-6qWo1g10ggwyorTjMEswX/z8DkODD1XnfjBjndIAj7rnUOgVlwYQz4UPQU9yBz2jBGd3Im1D1wlzzI/o6Q1Ptw==
+
 hosted-git-info@^2.1.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
